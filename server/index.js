@@ -5,6 +5,10 @@ const app = express() //  Você está criando uma instância do aplicativo Expre
 
 const db = require('./models')
 
+const postRouter = require('./routes/Posts')
+app.use('/posts', postRouter)
+app.use('/posts', postRouter)
+
 db.sequelize.sync().then(()=>{
     app.listen(3001, ()=> {
         console.log('rodando na porta 3001')
